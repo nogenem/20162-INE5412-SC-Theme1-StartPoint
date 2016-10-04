@@ -52,15 +52,23 @@ public:
         instruction =   (CPU::Opcode::RType << CPU::IFormat::off_opcode) + (
                         CPU::Funct::syscall << CPU::IFormat::off_funct);
         app->addCode(instruction);
-        // 2: addi a0, a0, 1
+        /*/ 2: addi a0, a0, 1
         instruction =   (CPU::Opcode::addi << CPU::IFormat::off_opcode) + 
                         (CPU::RegNum::a0 << CPU::IFormat::off_rd) + 
                         (CPU::RegNum::a0 << CPU::IFormat::off_rs) + 
                         (1 << CPU::IFormat::off_const);
         app->addCode(instruction);
-        // 3: j 1
+        //*/
+        //2: LacoInfinito onde ocorre um addi de 0 ao a0 (nao faz nada)
+        instruction =   (CPU::Opcode::addi << CPU::IFormat::off_opcode) + 
+                        (CPU::RegNum::a0 << CPU::IFormat::off_rd) + 
+                        (CPU::RegNum::a0 << CPU::IFormat::off_rs) + 
+                        (0 << CPU::IFormat::off_const);
+        app->addCode(instruction);
+            
+        // 3: j 2
         instruction =   (CPU::Opcode::j << CPU::IFormat::off_opcode) + 
-                        (1 << CPU::IFormat::off_addr);
+                        (2 << CPU::IFormat::off_addr);
         app->addCode(instruction);
         return app;
     }
