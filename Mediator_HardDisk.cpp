@@ -69,6 +69,6 @@ void HardDisk::setMaxBlocks(const HW_HardDisk::blockNumber maxBlocks) {
     
 }
 
-HW_HardDisk::blockNumber getMaxBlocks() {
+HW_HardDisk::blockNumber HardDisk::getMaxBlocks() {
     
 }

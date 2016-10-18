@@ -64,16 +64,16 @@ void OperatingSystem::ExecuteTestCode() {
             simulator->insertEvent(timeNow + 10.0, module, entity); // future event when execution will advance 
             break;
         case 1:
-            entity->getAttribute("ExecutionStep")->setValue(std::to_string(executionStep++)); // advance execution step
+            entity->getAttribute("ExecutionStep")->setValue(std::to_string(++executionStep)); // advance execution step
             break;
         case 2:
-            entity->getAttribute("ExecutionStep")->setValue(std::to_string(executionStep++)); // advance execution step
+            entity->getAttribute("ExecutionStep")->setValue(std::to_string(++executionStep)); // advance execution step
             break;
         case 3:
-            entity->getAttribute("ExecutionStep")->setValue(std::to_string(executionStep++)); // advance execution step
+            entity->getAttribute("ExecutionStep")->setValue(std::to_string(++executionStep)); // advance execution step
             break;
         default:
-            //entity->getAttribute("ExecutionStep")->setValue(std::to_string(executionStep++)); // advance execution step
+            //entity->getAttribute("ExecutionStep")->setValue(std::to_string(++executionStep)); // advance execution step
             break;
     }
     

@@ -77,7 +77,7 @@ void HW_HardDisk::setCommandRegister(unsigned int _commandRegister) {
             // schedule an event to notify it's ready
             simulator = Simulator::getInstance();
             entity = simulator->getEntity();
-            entity->getAttribute("MethodName")->setValue("HardDisk::interruptHandler()");
+            entity->getAttribute("MethodName")->setValue("HardDisk::interrupt_handler()");
             instantMovementFinished = simulator->getTnow() + headMovement * Traits<HW_HardDisk>::sectorMovementTime;
             simulator->insertEvent(instantMovementFinished, HW_Machine::Module_HardwareEvent(), entity);
             break;
@@ -106,7 +106,7 @@ void HW_HardDisk::setCommandRegister(unsigned int _commandRegister) {
             // schedule an event to notify it's ready
             simulator = Simulator::getInstance();
             entity = simulator->getEntity();
-            entity->getAttribute("MethodName")->setValue("HardDisk::interruptHandler()");
+            entity->getAttribute("MethodName")->setValue("HardDisk::interrupt_handler()");
             instantMovementFinished = simulator->getTnow() + headMovement * Traits<HW_HardDisk>::sectorMovementTime;
             simulator->insertEvent(instantMovementFinished, HW_Machine::Module_HardwareEvent(), entity);
             break;
